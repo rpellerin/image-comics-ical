@@ -1,7 +1,7 @@
 #!/bin/bash
 
-git checkout ical
-rm ical.ical
+git checkout ical >/dev/null 2>&1
+rm ical.ical 2>/dev/null
 node index.js > ical.ical
 status=$?
 

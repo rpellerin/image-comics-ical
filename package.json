@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/rpellerin/image-comics-ical/issues"
   },
-  "homepage": "https://github.com/rpellerin/image-comics-ical#readme"
+  "homepage": "https://github.com/rpellerin/image-comics-ical#readme",
+  "devDependencies": {
+    "prettier": "^1.17.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "ical-generator": "^1.7.1",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.5.0"
+  }
 }

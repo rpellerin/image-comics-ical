@@ -1,6 +1,15 @@
 # image-comics-ical
 
-Set a deploy key on Github for this repo.
+Set a deploy key with write access on Github for this repo.
+
+Configure git locally:
+
+```bash
+git clone git@github.com:rpellerin/image-comics-ical.git
+cd image-comics-ical
+git config user.email ...
+git config user.name
+```
 
 Use NVM or install latest NodeJS:
 

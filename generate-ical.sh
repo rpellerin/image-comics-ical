@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git checkout ical
 rm ical.ical
 node index.js > ical.ical
 status=$?

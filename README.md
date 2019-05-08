@@ -1,5 +1,7 @@
 # image-comics-ical
 
+Set a deploy key on Github for this repo.
+
 Use NVM or install latest NodeJS:
 
 ```bash

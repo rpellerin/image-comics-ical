@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd image-comics-ical
 git checkout ical -q
 rm ical.ical 2>/dev/null
 node index.js > ical.ical

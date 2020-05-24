@@ -1,8 +1,12 @@
 # image-comics-ical
 
-Set a deploy key with write access on Github for this repo.
+A NodeJS script that creates a file `ical.ical` containing upcoming releases dates for Image Comics. Meant to be run periodically on a server. The `ical.ical` file can then be made publicly available and used as an external calendar in Google Calendar.
 
-Configure git locally:
+## HOW TO
+
+[Set a deploy key with write access on Github for this repo using the server SSH RSA key.](https://github.com/rpellerin/image-comics-ical/settings/keys/new)
+
+Configure git locally on the server:
 
 ```bash
 git clone git@github.com:rpellerin/image-comics-ical.git

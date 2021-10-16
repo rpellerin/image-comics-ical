@@ -5,7 +5,7 @@ const moment = require('moment')
 
 moment.locale('en-US');
 
-const COMICS = ['low', 'the-walking-dead-1', 'paper-girls', 'ascender', 'die-die-die']
+const COMICS = ['the-walking-dead-1', 'die-die-die', 'saga']
 const BASE_URL = 'https://imagecomics.com/comics/list/series/'
 
 

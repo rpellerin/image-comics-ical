@@ -16,21 +16,30 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: master
+          fetch-depth: 0
 
       - name: Use latest Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
 
+      - name: Install dependencies
+        run: |
+          npm ci
+
       - name: Generate .ical file and git commit+push
         run: |
           set -e
           git config --global user.name "Github Actions (rpellerin)"
           git config --global user.email "rpellerin@users.noreply.github.com"
-          npm ci
-          git checkout -B ical
+
+          git checkout -B temp-ical
           node index.js > ical.ical
-          git status
           git add ical.ical
           git commit -m 'Generate ical' -n --allow-empty -q
-          git push origin ical --force
+
+          git checkout ical
+          git checkout temp-ical -- ical.ical
+          git add ical.ical
+          git commit -m 'Generate ical' -n --allow-empty -q
+          git push origin ical

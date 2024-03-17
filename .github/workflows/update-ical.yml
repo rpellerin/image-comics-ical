@@ -1,0 +1,36 @@
+name: Update .ical file
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Use latest Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Generate .ical file and git commit+push
+        run: |
+          set -e
+          git config --global user.name "Github Actions (rpellerin)"
+          git config --global user.email "rpellerin@users.noreply.github.com"
+          npm ci
+          git checkout -B ical
+          node index.js > ical.ical
+          git status
+          git add ical.ical
+          git commit -m 'Generate ical' -n --allow-empty -q
+          git push origin ical --force

@@ -7,7 +7,7 @@ import timezone from "dayjs/plugin/timezone.js"; // dependent on utc plugin
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-const COMICS = ["the-walking-dead", "die-die-die", "saga"];
+const COMICS = ["the-walking-dead", "die-die-die", "saga", "w0rldtr33"];
 const BASE_URL = "https://imagecomics.com/comics/list/series/";
 
 const downloadPage = async (url) => fetch(url).then((res) => res.text());
